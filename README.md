@@ -1,1 +1,2 @@
-# similar-movies
+# Similar Movies App
+...
