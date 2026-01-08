@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime files
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and test output
+coverage/
+.nyc_output/
+jest-cache/
+jest-results.json
+
+# Build / output
+dist/
+build/
+out/
+lib/
+.tmp/
+.esbuild/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.*.local
+.env.local
+secrets.*.env
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Misc
+*.swp
+*~
