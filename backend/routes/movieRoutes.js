@@ -1,39 +1,24 @@
 /**
  * Notes:
  * Routes - Defines my API endpoints (URLs)
+ * 
+ * - Matches the search and then calles the handler
  */
 
-const express = require("express");
-const { searchMovieByName, getSimilarMovies} = require("../services/movieService.js");
+// === Dependecies ===
+const express = require('express');
+const {
+    searchMoviesHandler,
+    getSimilarMoviesHandler
+} = require('../handlers/movieHandler.js');
 
 const router = express.Router();
 
-router.get('/search', async (req, res) => {
-    try {
-        const { query } = req.query;
+router.get('/search', searchMoviesHandler);
+router.get('/:id/similar', getSimilarMoviesHandler);
 
-        if (!query) {
-        return res.status(400).json({ error: 'Movie query is required'});
-        }
+module.exports = router;
 
-        const movies = await searchMovieByName(query);
-        res.json(movies);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch movies'});
-    }
-});
-
-// GET /api/movies/:id/similar
-router.get('/:id/similar', async (req, res) => {
-    try {
-        const { id } = req.params;
-
-        const movies = await getSimilarMovies(id);
-        res.json(movies);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch similar movies'});
-    }
-});
 
 
 module.exports = router;
