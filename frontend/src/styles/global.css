@@ -66,3 +66,108 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Body & layout */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #242424;
+  color: white;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+/* Inputs */
+input {
+  padding: 0.5rem;
+  font-size: 1em;
+}
+
+/* Movie card */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.movie-card {
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  padding: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.no-poster {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.movie-title {
+  font-weight: 600;
+  margin: 0.5rem 0 0.2rem 0;
+  color: #fff;
+}
+
+.movie-info {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin: 0 0 1rem 0;
+}
+
