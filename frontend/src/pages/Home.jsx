@@ -30,23 +30,21 @@ export default function Home() {
 
     return (
         <div class = 'main-search-container'>
-            <section class = 'search-title'>
-                <h2>Find your Movie</h2>
+            <section class = 'search-section'>
+                <h2>Find a Smilar Movie</h2>
 
-                <p>Start by searching your movie.</p>
-                <p>Click your movie title to find simialr movies.</p>
+                <p>&#9312; Start by searching for your movie title.</p>
+                <p>&#9313; Click on the movie title to view similar movies.</p>
             </section>
 
-            <img src = '' alt = '' />
-
-            <form onSubmit={handleSearch}>
+            <form class = 'movie-search-container' onSubmit={handleSearch}>
                 <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Enter a movie name"
+                    type = 'text'
+                    value = {query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder = 'Enter a movie name'
                 />
-                <button type="submit">Search</button>
+                <button type = 'submit'>Search</button>
             </form>
 
             {loading && <p>Loading...</p>}
