@@ -201,11 +201,15 @@ footer p {
 /* ============
     Movie Grid
 ================ */
+.similar-movies-results-container {
+  width: 100%;
+}
+
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em;
-  margin-top: 2em;
+  margin: 2em 0;
   width: 100%;
 }
 

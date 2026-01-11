@@ -25,33 +25,34 @@ export default function MovieDetails() {
     }, [id]);
 
     return (
-        <div>
-        <h1>Similar Movies</h1>
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
+        <div class = 'similar-movies-results-container'>
+            <h2>Similar Movies</h2>
 
-        <div className="movie-grid">
-            {movies.map((movie) => (
-            <div key={movie.id} className="movie-card">
-                <Link to={`/movie/${movie.id}`}>
-                    {movie.poster_path ? (
-                    <img
-                        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                        alt={movie.title}
-                    />
-                    ) : (
-                    <div className="no-poster">No Image</div>
-                    )}
-                    <p className="movie-title">{movie.title}</p>
-                    {movie.release_date && <p className="movie-info">Release: {movie.release_date}</p>}
-                    {movie.vote_average !== undefined && <p className="movie-info">Rating: {movie.vote_average}</p>}
-                </Link>
-                </div>
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
 
-            ))}
-        </div>
+            <section className = 'movie-grid'>
+                {movies.map((movie) => (
+                <div key = {movie.id} className = 'movie-card'>
+                    <Link to = {`/movie/${movie.id}`}>
+                        {movie.poster_path ? (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                            alt = {movie.title}
+                        />
+                        ) : (
+                        <div className = 'no-poster'>No Image</div>
+                        )}
+                        <p className = 'movie-title'>{movie.title}</p>
+                        {movie.release_date && <p className = 'movie-info'>Release: {movie.release_date}</p>}
+                        {movie.vote_average !== undefined && <p className = 'movie-info'>Rating: {movie.vote_average}</p>}
+                    </Link>
+                    </div>
 
-        <Link to="/">Back to Search</Link>
+                ))}
+            </section>
+
+            <Link class = 'back-to-seach-btn' to = '/'>Back to Search</Link>
         </div>
     );
 }
