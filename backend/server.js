@@ -12,6 +12,7 @@ dotenv.config(); // Tells dotenv to read and load the .env fiile
 // === Imported Libraries ===
 const express = require('express'); // Handles routes, req, and resp.
 const cors = require('cors'); // Allows APIs to be access by other domains
+const path = require('path'); // Needed to serve static frontend files
 const movieRoutes = require('./routes/movieRoutes.js'); // Imported custom route 
 
 // === Create EXPRESS Server
@@ -23,6 +24,14 @@ app.use(express.json()); // Allows the server to read JSON data
 
 // === ROUTES ===
 app.use('/api/movies', movieRoutes); // Any routes containing '/api/movies', refer to movieRoutes.js
+
+// === SERVE FRONTEND ===
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// === WILDCARD ROUTE FOR REACT ===
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
 
 const PORT = process.env.PORT || 5000; // Use PORT defined in .env or fallback to PORT 5000
 
