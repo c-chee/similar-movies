@@ -135,10 +135,17 @@ input {
 
 footer {
   width: 100%;
-  padding: 1rem;
-  background-color: #1a1a1a;
+  padding: 1.25em;
   text-align: center;
   margin-top: auto;
+
+  color: var(--alabaster-grey);
+  background: linear-gradient(to top, var(--black), var(--grey));
+  /* border-top: 1px solid var(--alabaster-grey); */
+}
+
+footer p {
+  margin: 0;
 }
 
 @media (min-width: 550px) {
