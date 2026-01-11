@@ -31,7 +31,7 @@ export default function Home() {
     return (
         <div class = 'main-search-container'>
             <section class = 'search-section'>
-                <h2>Find a Smilar Movie</h2>
+                <h2>To Search...</h2>
 
                 <p>&#9312; Start by searching for your movie title.</p>
                 <p>&#9313; Click on the movie title to view similar movies.</p>
@@ -52,24 +52,24 @@ export default function Home() {
 
             <section className = 'movie-grid'>
                 {movies.map((movie) => (
-                <div key={movie.id} className="movie-card">
-                    <Link to={`/movie/${movie.id}`}>
-                        {movie.poster_path ? (
-                        <img
-                            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                            alt={movie.title}
-                        />
-                        ) : (
-                        <div className="no-poster">No Image</div>
-                        )}
-                        <p className="movie-title">{movie.title}</p>
-                        {movie.release_date && <p className="movie-info">Release: {movie.release_date}</p>}
-                        {movie.vote_average !== undefined && <p className="movie-info">Rating: {movie.vote_average}</p>}
-                    </Link>
+                    <div key = {movie.id} className = 'movie-card'>
+                        <Link to={`/movie/${movie.id}`}>
+                            {movie.poster_path ? (
+                                <img src = {`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt = {movie.title}/>
+                            ) : (
+                                <div className = 'no-poster'>No Image</div>
+                            )}
+
+                            <p className = 'movie-title'>{movie.title}</p>
+
+                            {movie.release_date && <p className = 'movie-info'><b>Release: </b> {movie.release_date}</p>}
+                            
+                            {movie.vote_average !== undefined && <p className = 'movie-info'><b>Rating:  </b> {movie.vote_average}</p>}
+                        </Link>
                     </div>
                 ))}
-            </section>
+            </section> 
 
-        </div> // main-searcch-container
+        </div> // main-search-container
     );
 }
