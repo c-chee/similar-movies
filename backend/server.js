@@ -29,7 +29,7 @@ app.use('/api/movies', movieRoutes); // Any routes containing '/api/movies', ref
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // === Wildcard route for React Router ===
-app.get('/*', (req, res) => {   
+app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
