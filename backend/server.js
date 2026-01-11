@@ -25,11 +25,11 @@ app.use(express.json()); // Allows the server to read JSON data
 // === ROUTES ===
 app.use('/api/movies', movieRoutes); // Any routes containing '/api/movies', refer to movieRoutes.js
 
-// === SERVE FRONTEND ===
+// === Serve frontend static files ===
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// === WILDCARD ROUTE FOR REACT ===
-app.get('*', (req, res) => {
+// === Wildcard route for React Router ===
+app.get('/*', (req, res) => {   
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
