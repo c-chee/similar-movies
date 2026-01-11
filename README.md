@@ -5,7 +5,6 @@ Similar Movies App is web application that allows users to search for a movie an
 
 This project was built following the official TMDB API documentation and does not use any third-party TMDB wrappers or libraries.
 
----
 
 ## Features
 - Search for movies by title
@@ -14,7 +13,6 @@ This project was built following the official TMDB API documentation and does no
 - Direct API calls
 - Responsive UI built with React
 
----
 
 ## Technologies Used
 - JavaScript
@@ -23,20 +21,17 @@ This project was built following the official TMDB API documentation and does no
 - TMDB REST API
 - React
 
----
 
 ## API Usage
 This project uses the Movie Database (TMDB) API according to the official documentation:
 
 - https://developer.themoviedb.org/reference/intro/getting-started
 
----
 
 ## How to Use
 1. Start by searching for your movie title.
 2. Click on the movie title to view similar movies.
 
----
 
 ## Notes
 To run this project, you must provide your own TMDB API key.
