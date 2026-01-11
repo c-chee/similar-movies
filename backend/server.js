@@ -26,11 +26,11 @@ app.use(express.json()); // Allows the server to read JSON data
 app.use('/api/movies', movieRoutes); // Any routes containing '/api/movies', refer to movieRoutes.js
 
 // === Serve frontend static files ===
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // === Wildcard route for React Router ===
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000; // Use PORT defined in .env or fallback to PORT 5000
